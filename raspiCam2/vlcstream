@@ -1,0 +1,6 @@
+#!/bin/bash
+# startvlcstream
+# Startet eine VLC videostream über die Pi Cam. Protokoll rtp
+# Zum öffnen des streams im VLC Mediaplayer folgende Adresse angeben:
+# rtsp://<ip_adresse>:8554/
+raspivid -o - -t 0 -n -fps 25 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264

@@ -1,0 +1,1 @@
+raspivid -a 12 -n -t 0 -vf -ih -fps 30 -l -o tcp://0.0.0.0:5000
