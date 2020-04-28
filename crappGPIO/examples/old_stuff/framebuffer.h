@@ -1,8 +1,8 @@
 #ifndef _FRAMEBUFFER_H_
 #define _FRAMEBUFFER_H_
 
-#define SCREEN_W 1824
-#define SCREEN_H 958
+#define SCREEN_W 1920
+#define SCREEN_H 1080
 #define BLOCK_SIZE ((SCREEN_W * SCREEN_H) << 2) // w * h * 4B per pixel
 #define SCREEN_RED(o) *(framebuffer+((o)<<2)+2)
 #define SCREEN_GREEN(o) *(framebuffer+((o)<<2)+1)

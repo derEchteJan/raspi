@@ -1,8 +1,4 @@
-/*//#define BCM_PERI_BASE	0x20000000	// for raspberrypi 1
-#define BCM_PERI_BASE	0x3F000000	// for raspberrypi 2, 3
-#define GPIO_BASE		(BCM_PERI_BASE + 0x200000)
-*/
-#include "gpio.h"
+#include "crappgpio.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -12,12 +8,7 @@
 int mem_fd;
 void *gpio_map;
 volatile unsigned *gpio;
-/*
-#define INP_GPIO(g) *(gpio+((g)/10)) &= ~(7<<(((g)%10)*3))	// GPSEL(n) 000, input mode
-#define OUT_GPIO(g) *(gpio+((g)/10)) |= (1<<(((g)%10)*3))	// GPSEL(n) 001, output mode
-#define GPIO_SET *(gpio+7)	// GPSET0
-#define GPIO_CLR *(gpio+10)	// GPCLR0
-*/
+
 void setup_io() {
 	printf("gpio memory setup");
 	if((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0 ) {
@@ -44,3 +35,5 @@ void setup_io() {
 	gpio = (volatile unsigned *)gpio_map;
 	printf("complete.\n");
 }
+
+
