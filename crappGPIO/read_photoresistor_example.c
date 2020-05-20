@@ -6,7 +6,7 @@
 #define DELAY_ONE_S 1000000	// in ys
 #define DELAY_ONE_MS 1000		// in ys
 #define CAL_MAX_VAL 465
-#define TEST_PIN 18		// pin number to measure on
+#define TEST_PIN 12		// pin number to measure on
 
 
 int measure_light(int pin_nr) {
